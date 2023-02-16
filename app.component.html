@@ -1,0 +1,14 @@
+<ng-container *ngIf="buildIssue;else second">
+  <h4>Not Able To Build Gradient Selector</h4>
+</ng-container>
+<ng-template #second>
+  <div slider id="slider-distance">
+    <div class="gradient-box" #gradientBox></div>
+    <ng-container *ngFor="let color of gradientColors;let i = index">
+      <div class="thumb-tip" #pinHead></div>
+      <div class="thumb-body" #pinBody></div>
+      <input type="range" value="0" min="min" max="max"  step="1" (input)="valueChange($event,i)" #inputRange/>
+    </ng-container>
+  </div>    
+</ng-template>
+
